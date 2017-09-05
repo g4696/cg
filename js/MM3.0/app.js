@@ -30,7 +30,6 @@ var readyToSave = false,
 	orderItem;
 
 $(function(){
-	$('div').last().remove();
 	$('#prd_match').addOption('all', '所有裝備');
 	for(var i=0;i<types.length;i++){		//產生裝備種類選項清單
 		$('#type,#prd_match').addOption(types[i].val, types[i].name);
