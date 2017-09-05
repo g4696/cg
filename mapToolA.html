@@ -1,0 +1,94 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title>
+  <link rel="shortcut icon" href="images/find.ico">
+  <link href="css/bootstrap-slate.min.css" rel="stylesheet">
+  <link href="css/mapToolA_1.4.css" rel="stylesheet">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/mapToolA_1.4.min.js"></script>
+  <script src="js/stair.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-2" id="dropzone">
+      <div class="panel" id="drop">
+        請將地圖檔拖到這桌上<br/>
+        <div id="filename" class="label label-default">xxxx.dat</div>
+        <img src="images/stair/s0012209.gif" class="o8" />
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <!-- 按鈕列 -->
+        <div class="btn-group" data-toggle="buttons" id="searchType">
+          <label class="btn btn-primary btn-sm active">
+            <input type="radio" name="tt" value="3" checked> 找迷宮
+          </label>
+          <label class="btn btn-primary btn-sm">
+            <input type="radio" name="tt" value="10"> 找地圖
+          </label>
+        </div>
+        <!-- 按鈕列 -->
+        <!-- 按鈕列 -->
+        <div class="btn-group btn-group-sm">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            搜尋範圍 <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a id="fullSearch">全域搜尋</a></li>
+            <li><a id="rangeSearch" data-toggle="modal" data-target="#myModal">區域搜尋</a></li>
+          </ul>
+        </div>
+        <!-- 按鈕列 -->
+      </div>
+      <!-- 回傳結果 | 執行訊息 -->
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="map_size"></div>
+        <div id="map_content"></div>
+      </div>
+      <!-- 回傳結果 | 執行訊息 -->
+    </div>
+
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">請輸入要在地圖中搜尋的區域範圍</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="input-group">
+          <span class="input-group-addon">東</span>
+          <input id="e0" type="text" maxlength="3" value="0" class="form-control text-right">
+          <span class="input-group-addon"> ~ </span>
+          <input id="e1" type="text" maxlength="3" value="0" class="form-control text-right">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">南</span>
+          <input id="s0" type="text" maxlength="3" value="0" class="form-control text-right">
+          <span class="input-group-addon"> ~ </span>
+          <input id="s1" type="text" maxlength="3" value="0" class="form-control text-right">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="saveRange" data-dismiss="modal">儲存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</div>
+</body>
+</html>

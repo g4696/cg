@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>寵物能力試算表</title>
+	<link rel="stylesheet" href="css/bootstrap-slate.min.css">
+	<style>
+		* {
+			font-family: '微軟正黑體';
+		}
+		.form {
+			padding-left: 20px;
+			float: left;
+		}
+		input[type=text]{
+			background-color: #222;
+			border-radius: 5px;
+			color: #ffc;
+			width: 40px;
+			text-align: right;
+			padding-right: 3px;
+		}
+		input[type=text]:hover{
+			border-color: #dba901;
+		}
+		.ability input[type=text]{
+			width: 140px;
+			text-align: center;
+			padding: 0 5px;
+		}
+		.ability input[type=text]:hover{
+			border-color: #c6c;
+		}
+		input[type=button]{
+			border-radius: 5px;
+			color: #222;
+			text-align: center;
+			margin-top: 20px;
+			margin-left: 120px;
+			padding: 2px 20px;
+		}
+		input[type=button]:hover{
+			color: #33f;
+			box-shadow: 0 0 5px rgba(255,255,200,0.6);
+		}
+		.bp, .rnd, .drop {
+			margin-bottom: 10px;
+		}
+		input[type=button].random{
+			margin: 0;
+			padding: 1px;
+			font-size: 12px;
+			border-radius: 2px;
+		}
+		#monTemplate {
+			margin-top: 50px;
+			margin-left: 300px;
+			background-image: url(images/CG3000424_bg.png);
+			background-repeat: no-repeat;
+			color: #ffe;
+			width: 268px;
+			height: 306px;
+			position: relative;
+		}
+		#monTemplate span{
+			position: absolute;
+			font-size: 11px;
+			color: white;
+			font-style: italic;
+		}
+		.m_lv{
+			left: 80px;
+			top: 62px;
+		}
+		.m_hp{
+			left: 80px;
+			top: 79px;
+		}
+		.m_mp{
+			left: 170px;
+			top: 79px;
+		}
+		.m_atk{
+			left: 160px;
+			top: 210px;
+		}
+		.m_def{
+			left: 160px;
+			top: 225px;
+		}
+		.m_spd{
+			left: 160px;
+			top: 240px;
+		}
+		.m_mnd{
+			left: 208px;
+			top: 210px;
+		}
+		.m_rcv{
+			left: 208px;
+			top: 225px;
+		}
+		.m_last{
+			left: 90px;
+			top: 112px;
+		}
+		.m_rbp0{
+			left: 90px;
+			top: 127px;
+		}
+		.m_rbp1{
+			left: 90px;
+			top: 142px;
+		}
+		.m_rbp2{
+			left: 90px;
+			top: 157px;
+		}
+		.m_rbp3{
+			left: 90px;
+			top: 172px;
+		}
+		.m_rbp4{
+			left: 90px;
+			top: 187px;
+		}
+		.ov{
+			padding-left: 20px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="js/pet/simMonster.js"></script>
+	<script src="js/pet/params.js"></script>
+	<script>
+
+	$(function() {
+		$('#calc').click(function(){
+			var ability = {},
+				lv = parseInt($('#lv').val()),
+				rndBP = $('#rnd').val().split(' '),
+				dropBP = $('#drop').val().split(' '),
+				addBP = $('#add').val().split(' '),
+				total = 0,
+				totalAdd = 0,
+				max = 0;
+
+			ability.bp = $('#bp').val().split(' ');
+
+			for(var i=0;i<5;i++){
+				ability.bp[i] = parseInt(ability.bp[i]);
+				rndBP[i] = parseInt(rndBP[i]);
+				dropBP[i] = parseInt(dropBP[i]);
+				addBP[i] = parseInt(addBP[i]);
+				max += ability.bp[i];
+				total += ability.bp[i] - dropBP[i];
+				totalAdd += addBP[i];
+			}
+			ability.multi = parseInt($('#multi').val());
+			$('.max').html(max);
+			$('.total').html(total);
+			$('.m_last').html(lv - totalAdd - 1);
+			calcM(ability,lv,rndBP,dropBP,addBP);
+		});
+		$('#rndGen').click(function(){
+			$('#rnd').val(rnd(10).join(' '));
+		});
+		$('#dropGen').click(function(){
+			var val = drop(),
+				max = $('#bp').val().split(' '),
+				total = 0;
+			
+			for(i=0;i<val.length;i++){
+				total += max[i]-val[i];
+			}
+
+			$('#drop').val(val.join(' '));
+			$('.total').html(total);
+		});
+		$('input[type=text]').hover(function() {
+			$(this).select();
+		});
+	});
+
+
+	function calcM(ability,lv,rndBP,dropBP,addBP){
+		var panel = $('#monTemplate'),
+			m = Monster.sim(ability, lv, rndBP, dropBP, addBP),
+			sumBP = 0;
+
+		panel.find('.m_lv').text(lv);
+		panel.find('.m_hp').text(m.hp);
+		panel.find('.m_mp').text(m.mp);
+		panel.find('.m_atk').text(m.atk);
+		panel.find('.m_def').text(m.def);
+		panel.find('.m_spd').text(m.spd);
+		panel.find('.m_mnd').text(m.mnd);
+		panel.find('.m_rcv').text(m.rcv);
+		for(var i=0;i<m.rbp.length;i++){
+			panel.find('.m_rbp'+i).text(m.rbp[i]);
+			sumBP += m.rbp[i];
+		}
+		var ovStr = '<br>1級灌水BP：' + m.overflow.bp + '<br>';
+		ovStr += '灌水等級：' + m.overflow.lv.toFixed(2) + '<br>';
+		ovStr += 'BP總合：' + sumBP + '<br>';
+		$('.ov').html(ovStr);
+	}
+	</script>
+</head>
+<body>
+<div class="form">
+	<div class="lv">
+		<label for="lv">等級 : </label>
+		<input type="text" id="lv" value="1">
+	
+		<label for="multi">1級倍率 : </label>
+		<input type="text" id="multi" value="20"><br><br>
+	</div>
+	<div class="ability">
+		<div class="bp">
+			寵物最高檔次：<br>
+			<input type="text" id="bp" value="0 0 0 0 0">
+			<span class="max"></span>檔
+		</div>
+		<div class="rnd">
+			隨機檔次：<input type="button" value="隨機" id="rndGen" class="random"><br>
+			<input type="text" id="rnd" value="2 2 2 2 2">
+		</div>
+		<div class="drop">
+			掉檔：<input type="button" value="隨機" id="dropGen" class="random"><br>
+			<input type="text" id="drop" value="2 2 2 2 2">
+			<span class="total"></span>檔
+		</div>
+		<div class="add">
+			升級加點：<br>
+			<input type="text" id="add" value="0 0 0 0 0">
+		</div>
+	</div>
+
+	<input type="button" value="Calc" id="calc">
+</div>
+
+<div id="monTemplate">
+	<span class="m_lv"></span>
+	<span class="m_hp"></span>
+	<span class="m_mp"></span>
+	
+	<span class="m_last"></span>
+	<span class="m_rbp0"></span>
+	<span class="m_rbp1"></span>
+	<span class="m_rbp2"></span>
+	<span class="m_rbp3"></span>
+	<span class="m_rbp4"></span>
+
+	<span class="m_atk"></span>
+	<span class="m_def"></span>
+	<span class="m_spd"></span>
+	<span class="m_mnd"></span>
+	<span class="m_rcv"></span>
+</div>
+<div class="ov">
+	
+</div>
+</body>
+</html>

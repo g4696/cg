@@ -1,0 +1,29 @@
+
+#drop{
+  height: 140px;
+  border: #999 2px dashed;
+  padding-top: 50px;
+  text-align: center;
+  color: #999
+}
+#filename{
+  margin-top: 5px;
+  display: inline-block;
+}
+#accordion .panel-body{
+  background-color: #eef;
+  color: #222;
+}
+#accordion .panel-title{
+  text-align: center;
+}
+a, a:hover{
+  text-decoration: none;
+}
+.red{
+  color: red;
+}
+body { padding-top: 30px; }
+.container{
+  margin-left: 20px;
+}

@@ -1,0 +1,135 @@
+	body,div,td{
+		font-size:13px;
+	}
+	body{
+		background-color: #666;
+	}
+	tbody td{
+		background-color:#EEE8AA;
+	}
+	table{
+		border-radius:5px;
+		border-collapse: separate !important;
+		margin: auto;
+	}
+	label{
+		font-size:90%;
+	}
+	.rl{
+		background-color:#EEFFBB;
+	}
+	.title{
+		background-color:#AB98EE;
+	}
+	.title1{
+		background-color:#98EEAB;
+	}
+	.rt{
+		text-align:right;
+	}
+	.mt{
+		text-align:center;
+	}
+	.ls{
+		background-color:#E0F099;
+	}
+	#type, #product{
+		background-color:#708090;
+		font-family:Verdana;
+		font-weight:bold;
+		border:1px solid #a1a1DD;
+		padding:1px 5px;
+		border-radius:5px;
+	}
+	input[type=text]{
+		border:1px solid #a1a1DD;
+		border-radius:5px;
+		background-color:#708090;
+		font-family:Verdana;
+		font-weight:bold;
+		text-align:right;
+		padding:2px 3px;
+	}
+	#resultTable1, #resultTable2, #errMessage{
+		display:none;
+	}
+	#pqty1,#p2uslt{
+		position: relative;
+		display: inline-block;
+	}
+	.sbtn{
+		position: relative;
+		float: right;
+		font-family: Tahoma;
+		/*border-radius: 5px;*/
+	}
+	#noticeBoard{
+		max-width: 700px;
+		margin: auto;
+		padding-top: 10px;
+	}
+	.notice{
+		position: relative;
+		background-color: #eec;
+		width:200px;
+		padding:0px 10px 10px 10px;
+		display:inline-block;
+		border-radius: 5px;
+		margin: 5px;
+		font-family: Tahoma;
+		border-top:solid 1px #eee;
+		border-left:solid 1px #eee;
+		border-right:solid 1px #333;
+		border-bottom:solid 1px #333;
+	}
+	.notice div:nth-child(odd){
+		background-color: #dfd;
+	}
+	.notice div{
+		border-bottom: dashed 1px #333;
+		padding-left: 5px;
+		cursor: pointer;
+		color: #822;
+	}
+	.notice div:hover{
+		background-color: #bbb;
+	}
+	.notice h3{
+		background-color: #bbb;
+		border-bottom:solid 1px #777;
+		border-left:solid 1px #ccc;
+		border-right:solid 1px #777;
+		border-top:solid 1px #ccc;
+		padding-bottom: 3px;
+		padding-left: 5px;
+		margin-top: 0px;
+		margin-right: 14px;
+		font-size: 13px;
+		color: #228;
+	}
+	.template{
+		display: none;
+	}
+	.close{
+		background-color:#eef;
+		position: absolute;
+		right:-1px;
+		top:-1px;
+		font-weight: bold;
+		width:20px;
+		text-align:center;
+		border:solid 1px #999;
+		cursor:pointer;
+		border-radius: 5px;
+		border-right:solid 1px #333;
+		border-top:solid 1px #ccc;
+	}
+	.close:hover{
+		color: #f22;
+	}
+	.marked{
+		text-decoration: line-through;
+	}
+	.unmark{
+		text-decoration: none;
+	}

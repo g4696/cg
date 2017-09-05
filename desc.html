@@ -1,0 +1,96 @@
+    <div class="col-md-4 panel-group" id="accordion">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          一般操作<span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <p>先開啟遊戲程式的地圖檔目錄 <i>\map</i>，將子目錄下的 <i>*.dat</i> 檔案拉到最左邊的虛線框中</p>
+        <p>接著程式會開始判讀此檔案是否為地圖檔，並將結果呈現在畫面中間的空白框中</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          結果判讀<span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>迷宮/地圖大小 : 寬 &times; 高</p>
+        <p>樓梯/出入口位置 : 每一個<span class="badge">東,南</span>代表一個地圖切換點</p>
+        <p>樓梯已經盡量用圖片顯示了，要往上或往下應該會更方便。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          迷宮 | 地圖<span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+          <p>迷宮 : 隨機地圖，在 <i>\map\1</i> 下方所有子目錄的 <i>*.dat</i> 檔案，包含所有的迷宮</p>
+          <p>地圖 : 固定地圖，在 <i>\map\0</i> 下方所有的 <i>*.dat</i> 檔案，包含各大陸、城鎮和房間</p>
+          <p>以上所有 <i>*.dat</i> 只要在該區域移動，就會從官方的伺服器來進行更新</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          進階操作<span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+          <p>
+            <b>範例1:在雪山或司雲崖找不到樓梯。</b><br/>
+            解決方式:在隨機地圖檔<i>\map\1</i>區用檔案總管的視窗選擇修改日期的排序，找到最接近目前時間的一個<i>dat</i>檔案，將它拖進來，如果看到有2個座標的結果，其中一個是你進來的樓梯，另一個就是你要找的樓梯。<br/>
+            註：要地圖檔有更新到才能解析出來。
+          </p>
+          <p>
+            <b>範例2:解深淵任務找不到傳送水晶。</b><br/>
+            解決方式:選取固定地圖檔<i>\map\0\400.dat</i>，將它拖進來並選擇<i>找迷宮</i>的方式，如果看到有個座標的結果是在那附近，那應該就是你要找的傳送水晶。<br/>
+            註：固定地圖檔編號可以到<a href="http://cgsword.com/filesystem_mapdatlist.htm" target="_blank">御劍軒</a>網站查詢。
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+          小提醒<span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">
+          <p>
+            <i>\map\0</i> 資料夾以外的隨機地圖檔，有空就清一清吧，爬過的迷宮重組過後這些隨機地圖檔就沒用了。<br/>
+            除非留下來趁著迷宮重組之前還能報座標給親友們知道一下。
+          </p>
+          <p>PS.<b>地圖上並不會有NPC的訊息</b>，所以逆星換原礦這類的NPC還是得靠肉眼來找。</p>
+      </div>
+    </div>
+  </div>
+
+    </div>

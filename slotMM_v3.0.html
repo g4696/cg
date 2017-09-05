@@ -1,0 +1,127 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="images/CG3000566.png">
+<link rel="stylesheet" href="css/MM3.0/style.css">
+<link rel="stylesheet" href="css/MM3.0/notice.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.selectboxes.min.js"></script>
+<script type="text/javascript" src="js/common/slot/materials.js"></script>
+<script type="text/javascript" src="js/common/slot/recipe_2017.js"></script>
+<script type="text/javascript" src="js/MM3.0/notice.js"></script>
+<script type="text/javascript" src="js/MM3.0/app.js"></script>
+</head>
+<body>
+
+<div class="wraper">
+	<div id="n_prd">
+		<div class="pic">
+			<img src="images/pic/blank.gif">
+		</div>
+		<div class="qty"></div>
+	</div>
+	<div class="calc">
+		<label>種類：</label>
+		<select id="type" style="width:100px"></select><br>
+		<label>產品：</label>
+		<select id="product" style="width:200px"></select><br>
+		<input type="radio" name="method" id="method1" value="method1" checked /><label for="method1">空格數量：</label>
+		<input type="radio" name="method" id="method2" value="method2" /><label for="method2">生產數量：</label>
+		<input type="text" id="slots" value="10" size="4" maxlength="4" />
+		<input type="button" value="計算" id="calc" />
+	</div>
+	<div class="item" id="n_mt1">
+		<div class="helper"></div>
+		<div class="pic">
+			<img src="images/pic/blank.gif" class="mat">
+		</div>
+		<div class="qty"></div>
+		<div class="name"></div>
+		<div class="slt" id="slt1"></div>
+	</div>
+	<div class="item" id="n_mt2">
+		<div class="helper"></div>
+		<div class="pic">
+			<img src="images/pic/blank.gif" class="mat">
+		</div>
+		<div class="qty"></div>
+		<div class="name"></div>
+		<div class="slt" id="slt2"></div>
+	</div>
+	<div class="item" id="n_mt3">
+		<div class="helper"></div>
+		<div class="pic">
+			<img src="images/pic/blank.gif" class="mat">
+		</div>
+		<div class="qty"></div>
+		<div class="name"></div>
+		<div class="slt" id="slt3"></div>
+	</div>
+	<div class="item" id="n_mt4">
+		<div class="helper"></div>
+		<div class="pic">
+			<img src="images/pic/blank.gif" class="mat">
+		</div>
+		<div class="qty"></div>
+		<div class="name"></div>
+		<div class="slt" id="slt4"></div>
+	</div>
+	<div class="item" id="n_mt5">
+		<div class="helper"></div>
+		<div class="pic">
+			<img src="images/pic/blank.gif" class="mat">
+		</div>
+		<div class="qty"></div>
+		<div class="name"></div>
+		<div class="slt" id="slt5"></div>
+	</div>
+	<div id="errMessage">&nbsp;</div>
+	<div class="result">
+		<input type="button" class="sbtn" value="記錄"/>
+		<div id="pqty"></div>
+		<div id="uslt"></div>
+	</div>
+</div>
+
+<div id="matchBoard">
+	<label>篩選材料：</label>
+	<select id="mt_match"></select>
+	<!-- <input type="button" class="plus_btn" value="+" />
+	<input type="button" class="minus_btn" value="-" /> -->
+	<img src="images/icons/11.png" class="plus_btn" alt="加入正向表列">
+	<img src="images/icons/12.png" class="minus_btn" alt="加入負向表列"><br>
+	<label>篩選範圍：</label>
+	<select id="prd_match"></select>
+	<input type="button" class="mbtn" value="篩選" /><br>
+	<div class="plus">
+		<label>正向表列：</label>
+		<div class="plus_list"></div>
+	</div>
+	<div class="minus">
+		<label>負向表列：</label>
+		<div class="minus_list"></div>
+	</div>
+	<hr size="1">
+	<div id="match_result">
+		<div class="match">
+			<label>符合清單：</label>
+			<span class="count"></span><br>
+			<select id="match_list" size="3"></select>
+		</div>
+		<div class="nomatch"></div>
+	</div>
+</div>
+
+<div id="noticeBoard"></div>
+<div class="notice template" id="noticeTemplate">
+	<span class="close" data-id="">X</span>
+	<h3></h3>
+	<div class="mt-item"></div>
+	<div class="mt-item"></div>
+	<div class="mt-item"></div>
+	<div class="mt-item"></div>
+	<div class="mt-item"></div>
+</div>
+</body>
+</html>

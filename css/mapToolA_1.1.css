@@ -1,0 +1,49 @@
+  #drop{
+      height: 140px;
+      border: #999 2px dashed;
+      padding-top: 50px;
+      text-align: center;
+      color: #999
+  }
+  #filename{
+      margin-top: 5px;
+      display: inline-block;
+  }
+  #searchType label:nth-child(odd){
+      margin-right: 2px;
+      /*margin-left: 2px;*/
+  }
+  #searchType label:nth-child(even){
+      /*margin-right: 2px;*/
+      margin-left: 2px;
+  }
+  #accordion .panel-body{
+      background-color: #eef;
+      color: #222;
+  }
+  #accordion .panel-title{
+      text-align: center;
+  }
+  #accordion .panel-title a{
+      display: block;
+  }
+  #map_content{
+      height: 250px;
+      overflow-y: scroll;
+  }
+  #map_content img{
+      margin-left: 10px;
+  }
+  a, a:hover{
+      text-decoration: none;
+  }
+  .red{
+      color: red;
+  }
+  body { padding-top: 30px; }
+  .container{
+      margin-left: 20px;
+  }
+  .glyphicon{
+      float: right;
+  }
